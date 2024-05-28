@@ -218,7 +218,7 @@ main {
 }
 
 #contrato .botao-contrato {
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 #detalhes {
@@ -228,7 +228,7 @@ main {
     text-align: center;
     border-radius: 20px;
     margin-inline: auto;
-    padding-top: 75px;
+    padding-top: 70px;
 }
 
 
@@ -251,6 +251,7 @@ main {
 
 
 #servicos {
+    margin-top: 4rem;
     margin-bottom: 7rem;
 }
 
