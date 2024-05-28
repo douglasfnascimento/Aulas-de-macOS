@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --cor-destaque: #2391FF;
+    --cor-fundo: #262F39;
+    --cor-fundo-claro: #576F88;
+    --cor-texto: #ececec;
+    --cor-texto-2: #ccc;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* A opção acima seleciona todos os elementos do HTML (p, h2, h1, div, etc) e atribui configurações globais a eles padding inline e padding block*/
+
+
+body {
+    font-family: Poppins, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+
+section {
+    width: 90%; /* Definine um tamanho de 90% para o main em relação ao body (que é 100%), o que faz com que haja uma margem todo o tempo. Eu poderia também usar um padding aqui*/
+    max-width: 1300px; /* Definine um tamanho máximo para o main, impedindo que ele seja muito largo em telas grandes*/
+    margin: 2rem auto; /* Define margem superior de 1rem e Centraliza o main*/
+}
+
+
+header {
+    background: var(--cor-fundo);
+    padding-inline: 16px;
+    box-shadow: 0 1px 3px #53535370;
+}
+
+.nav {
+    width: 90%;
+    max-width: 1280px;
+    height: 70px;
+    margin-bottom: 5rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    z-index: 5;
+
+}
+
+.nav .whatsapp {
+    display: flex;
+    padding: 0.4rem 0.6rem;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav .whatsapp i {
+    align-content: center;
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.nav .whatsapp a {
+    text-decoration: none;
+}
+
+.nav .whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburguer::before, .hamburguer::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+.nav-list a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-block: 16px;
+    transition-duration: 0.1s;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--cor-destaque);
+}
+
+#home {
+    padding: 1rem;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+#home img {
+    max-width: 35rem;
+}
+
+#home .chamada {
+    margin-left: 3rem;
+}
+
+#home h1 {
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+#home  span {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+#home p {
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-top: 1rem;
+    color: var(--cor-texto-2);
+}
+
+#contrato {
+    background-image: url('../imgs/macs-fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    max-width: none;
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    
+}
+
+#contrato .overlay {
+    position: absolute; /* Posiciona a overlay dentro do elemento pai */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262f39c9;
+}
+
+#contrato .content {
+    position: relative; /* Garante que o conteúdo esteja acima da overlay */
+    color: var(--cor-texto); /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem; /* Espaçamento interno */
+    z-index: 1; /* Garante que o texto esteja acima da overlay */
+    
+}
+
+#contrato h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+#contrato a {
+    display: inline-block; /* Necessário para que o elemento possa ser redimensionado */
+    background-color: var(--cor-destaque);
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    color: var(--cor-fundo);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    transition: transform 0.3s; /* Adiciona a transição para transformações */
+
+}
+
+#contrato a:hover {
+    transform: scale(1.15); /* Aumenta o botão sem afetar o layout */
+}
+
+#contrato .botao-contrato {
+    margin-top: 4rem;
+}
+
+#detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+
+#detalhes .detalhe {
+    padding: 3rem;
+}
+
+
+#detalhes p {
+    font-size: 2.0rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0;
+
+}
+
+#detalhes i {
+    font-size: 7rem;
+}
+
+
+#servicos {
+    margin-bottom: 7rem;
+}
+
+
+#servicos .box-servicos{
+    margin: auto;
+    width: 100%;
+    background-color: var(--cor-fundo-claro);
+    border-radius: 30px;
+}
+
+#servicos .container-servicos {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 8rem;
+}
+
+#servicos img {
+    max-width: 400px;
+}
+
+
+#servicos ul {
+    font-size: 1.7rem;
+    list-style-position: inside;
+    list-style-image: url('../imgs/checkmark.png')
+}
+
+#servicos ul li {
+    line-height: 1.6;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--cor-fundo);
+}
+
+#servicos .container-preco {
+    align-content: center;
+    
+}
+
+#servicos .container-preco h1 {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+#servicos .container-preco .preco-mobile {
+    display: none;
+}
+
+#servicos .container-preco .box-preco-promocional {
+    padding: 2rem 2rem ;
+    background-color: var(--cor-fundo);
+    border-radius: 30px;
+}
+
+#servicos .container-preco span {
+    font-size: 2rem;
+}
+
+#servicos .container-preco p {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+#sobre-mim {
+    display: flex;
+    margin-bottom: 7rem;
+
+}
+
+#sobre-mim img {
+    max-width: 20rem;
+    min-width: 15rem;
+    border-radius: 50%;
+    margin-right: 5rem;
+}
+
+#sobre-mim h1 {
+    font-weight: 600;
+    font-size: 3rem;
+}
+#sobre-mim h2 {
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+#sobre-mim h2 span {
+    font-weight: 600;
+    color: var(--cor-destaque);
+
+}
+
+#sobre-mim p {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    color: var(--cor-texto-2);
+    font-weight: 300;
+}
+
+#sobre-mim p a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#sobre-mim p a:hover {
+    color: var(--cor-destaque);
+}
+
+#sobre-mim .container-sobre .redes {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem; /* Espaçamento entre os ícones */
+}
+
+#sobre-mim .container-sobre .redes i {
+    font-size: 2.4rem;
+    color: var(--cor-texto);
+    transition: color 0.5s ease;
+
+}
+
+#sobre-mim .container-sobre .redes i:hover {
+    font-size: 2.4rem;
+    color: var(--cor-destaque);
+}
+
+footer {
+    text-align: center;
+    padding: 0.8rem;
+    background-color: #222932;
+    color: #b1b1b1;
+}
+
+footer a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--cor-destaque);
+}
+
+@media (max-width: 1350px) {
+    #servicos .container-servicos {
+        padding: 4rem 4rem;
+    }
+}
+
+@media (max-width: 1213px) {
+    #home img {
+        max-width: 25rem;
+    }
+
+    #home h1 {
+        text-align: left;
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        text-align: left;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+    }
+
+    #servicos ul {
+        font-size: 1.5rem;
+    }
+
+    #servicos .container-preco h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 1130px) {
+    #servicos ul {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1060px) {
+
+    #home {
+        flex-direction: column;
+    }
+
+    #home .imagem-mac {
+        margin: auto;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    #home img {
+        max-width: 50%;
+
+    }
+
+    #home .chamada {
+        margin-left: 0;
+    }
+
+    #home h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+    }
+
+    #contrato a {
+        font-size: 1.5rem;
+    }
+
+    #contrato h2 {
+        width: 80%;
+        margin: auto;
+    }
+
+    #detalhes i {
+        font-size: 3rem;
+    }
+    #detalhes p {
+        font-size: 1.2rem;
+    }
+
+    #servicos .container-servicos {
+        flex-direction: column-reverse;
+    }
+
+    #servicos .container-preco .box-preco-promocional {
+        padding: 1rem 1rem;
+        margin-bottom: 1.7rem;
+    }
+
+    #servicos .container-preco .preco-mobile {
+        display: block;
+    }
+
+    #servicos .container-preco .box-preco-promocional .preco-mobile  span {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--cor-destaque);
+    }
+
+    #servicos .container-preco .preco-desktop {
+        display: none;
+    }
+
+    #servicos ul {
+        font-size: 2rem;
+    }
+
+    #servicos ul li {
+        line-height: 1.8;
+    }
+
+    #sobre-mim img {
+        max-width: 25px;
+    }
+}
+
+
+@media (max-width: 940px) {
+    #servicos ul li {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 940px) {
+    #servicos ul li {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media (max-width: 790px) {
+
+    #contrato {
+        height: 300px;
+    }
+
+    #contrato a {
+        font-size: 1rem;
+    }
+    
+    #contrato h2 {
+        font-size: 2rem;
+    }
+    
+    #detalhes .detalhe {
+        padding: 1rem;
+    }
+
+
+    #servicos {
+        margin-bottom: 3rem;
+    }
+
+    #servicos .container-servicos {
+        padding: 2rem 2rem;
+    }
+
+    #servicos ul {
+        list-style-image: url('../imgs/checkmark-small.png')
+    }
+
+    #servicos ul li {
+        font-size: 1.5rem;
+    }
+
+    #servicos .container-preco .box-preco-promocional {
+        padding: 0.5rem 0.7rem;
+    }
+
+    #servicos .container-preco .preco-mobile p {
+        font-size: 1rem;
+    }
+
+    #servicos .container-preco .box-preco-promocional .preco-mobile {
+        font-size: 1.5rem;
+    }
+
+    #servicos .container-preco .box-preco-promocional .preco-mobile  span {
+        font-size: 1.7rem;
+    }
+
+    #sobre-mim {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    #sobre-mim .imagem-perfil {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    #sobre-mim img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        max-width: 25%;
+        min-width: 5rem;
+    }
+
+    #sobre-mim h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+    #sobre-mim h2 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    #sobre-mim p {
+        text-align: center;
+
+        font-size: 1rem;
+    }
+
+    #sobre-mim .container-sobre .redes {
+        display: flex;
+        justify-content: center;
+        gap: 1rem; /* Espaçamento entre os ícones */
+        margin-top: 1rem;
+    }
+    
+    #sobre-mim .container-sobre .redes i {
+        font-size: 2rem;
+    
+    }
+}
+
+@media (max-width: 666px) {
+    #servicos ul li {
+        font-size: 1.3rem;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--cor-fundo);
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav-list a {
+        font-size: 2rem;
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+}
+
+@media (max-width: 590px) {
+    #servicos ul li {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 505px) {
+
+    #contrato h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    #servicos ul li {
+        font-size: 0.8rem;
+    }
+
+    #detalhes i {
+        font-size: 2rem;
+    }
+
+    #detalhes p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    #servicos ul li {
+        font-size: 0.6rem;
+    }
+}
