@@ -632,20 +632,6 @@ footer a:hover {
         max-width: 10rem;
     }
 
-    #contato #contact-form {
-        width: 350px;
-    }
-
-    #contato #name {
-        border-top-right-radius: 0;
-    }
-
-    #contato .circulo {
- 
-        right: calc(50% + -10.95rem);
-        bottom: calc(50% + 6.4rem);
-    }
-    
 
 
 
@@ -829,6 +815,16 @@ footer a:hover {
 @media (max-width: 590px) {
     #servicos ul li {
         font-size: 1.1rem;
+    }
+
+    #contato #contact-form {
+        width: 350px;
+    }
+
+    #contato .circulo {
+ 
+        right: calc(50% + -10.95rem);
+        bottom: calc(50% + 6.4rem);
     }
 }
 
