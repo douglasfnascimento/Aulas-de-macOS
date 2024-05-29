@@ -17,6 +17,7 @@ menuItems.forEach(item => {
 });
 
 
+//código para rolagem ao selecionar as seções no menu
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.scroll-link').forEach(link => {
@@ -30,3 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//código do formulário
+
+function submitForm() {
+    // Enviar os dados do formulário para o Formspree usando AJAX
+    var formData = new FormData(document.getElementById("contact-form"));
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://formspree.io/f/xayrzgdv");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Exibir mensagem de sucesso
+                document.getElementById("success-message").classList.remove("hidden");
+                // Limpar os campos do formulário
+                document.getElementById("contact-form").reset();
+            } else {
+                // Em caso de erro, você pode exibir uma mensagem de erro ou lidar com isso de outra forma
+                console.error("Erro ao enviar formulário:", xhr.status);
+            }
+        }
+    };
+    xhr.send(formData);
+}

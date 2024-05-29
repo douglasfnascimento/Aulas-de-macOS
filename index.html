@@ -107,7 +107,27 @@
                 </div>
             </div>
         </section>
+        <section id="contato">
+            <div class="circulo">
+                <p class="texto-retangulo">agende já sua aula</p>
 
+            </div>
+            <form id="contact-form">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Insira seu nome" required>
+              
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Insira seu e-mail" required>
+              
+                <label for="phone"></label>
+                <input type="tel" id="phone" name="phone" placeholder="Insira seu telefone" required>
+              
+                <button type="button" onclick="submitForm()">Enviar</button>
+                <div class="mensagem">
+                    <p id="success-message" class="hidden">Dados enviados com sucesso. Entraremos em contato em breve.</p>
+                </div>
+            </form>
+        </section>
     </main>
     <footer>
         <p>&copy; <a href="https://douglasnascimento.dev" target="_blank">Douglas Nascimento</a> – Todos os direitos reservados</p>
